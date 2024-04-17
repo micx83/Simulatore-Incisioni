@@ -16,7 +16,7 @@ document.getElementById('engravingForm').addEventListener('submit', function(eve
 var engravingArea = document.getElementById('engravingArea');
 
 engravingArea.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text/plain', element.id);
+    event.dataTransfer.setData('text/plain', engravingArea.id);
 });
 
 var pendant = document.getElementById('pendant');
@@ -29,8 +29,10 @@ pendant.addEventListener('drop', function(event) {
     event.preventDefault();
     var id = event.dataTransfer.getData('text');
     var draggableElement = document.getElementById(id);
-    var dropzone = event.target;
-    dropzone.appendChild(draggableElement);
-    draggableElement.style.left = event.clientX - dropzone.offsetLeft + 'px';
-    draggableElement.style.top = event.clientY - dropzone.offsetTop + 'px';
+    if (draggableElement) {
+        var dropzone = event.target;
+        dropzone.appendChild(draggableElement);
+        draggableElement.style.left = event.clientX - dropzone.offsetLeft + 'px';
+        draggableElement.style.top = event.clientY - dropzone.offsetTop + 'px';
+    }
 });
