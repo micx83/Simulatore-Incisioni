@@ -3,27 +3,20 @@ document.getElementById('engravingForm').addEventListener('submit', function(eve
 
     var text = document.getElementById('text').value;
     var font = document.getElementById('font').value;
-    var pendant = document.getElementById('pendant').value;
-    var image = document.getElementById('image').value;
+    var base = document.getElementById('base').value;
 
     var pendantDiv = document.getElementById('pendant');
-    pendantDiv.style.backgroundImage = 'url(' + pendant + '.png)';
+    pendantDiv.style.backgroundImage = 'url(' + base + ')';
 
     var engravingArea = document.getElementById('engravingArea');
     engravingArea.style.fontFamily = font;
     engravingArea.textContent = text;
-
-    var engravingImage = document.getElementById('engravingImage');
-    engravingImage.src = image + '.png';
 });
 
 var engravingArea = document.getElementById('engravingArea');
-var engravingImage = document.getElementById('engravingImage');
 
-[engravingArea, engravingImage].forEach(function(element) {
-    element.addEventListener('dragstart', function(event) {
-        event.dataTransfer.setData('text/plain', element.id);
-    });
+engravingArea.addEventListener('dragstart', function(event) {
+    event.dataTransfer.setData('text/plain', element.id);
 });
 
 var pendant = document.getElementById('pendant');

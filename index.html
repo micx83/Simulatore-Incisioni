@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simulatore di incisioni</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="inputArea">
-        <form id="engravingForm">
-            <label for="text">Testo da incidere:</label><br>
-            <input type="text" id="text" name="text"><br>
-            <label for="font">Font:</label><br>
-            <select id="font" name="font">
-                <option value="Savoye Let">Savoye Let</option>
-                <option value="American Typewriter">American Typewriter</option>
-                <option value="Lovely Day">Lovely Day</option>
-            </select><br>
-            <label for="pendant">Ciondolo:</label><br>
-            <select id="pendant" name="pendant">
-                <option value="model1">Modello 1</option>
-                <option value="model2">Modello 2</option>
-                <option value="model3">Modello 3</option>
-            </select><br>
-            <label for="image">Immagine da incidere:</label><br>
-            <select id="image" name="image">
-                <option value="image1">Immagine 1</option>
-                <option value="image2">Immagine 2</option>
-                <option value="image3">Immagine 3</option>
-            </select><br>
-            <input type="submit" value="Visualizza incisione">
-        </form>
-    </div>
-    <div id="outputArea">
-        <div id="pendant">
-            <div id="engravingArea" draggable="true"></div>
-            <img id="engravingImage" draggable="true">
-        </div>
+    <form id="engravingForm">
+        <input type="text" id="text" placeholder="Inserisci il testo da incidere">
+        <select id="font">
+            <option value="Savoye">Savoye</option>
+            <option value="LovelyDay">LovelyDay</option>
+            <option value="American">American</option>
+        </select>
+        <select id="base">
+            <option value="images/CHFamilyN.png">Charm Cuore</option>
+            <option value="images/CLCFamilyN.png">Ciondolo Cuore</option>
+            <option value="images/CLTFamilyN.png">Ciondolo Tondo</option>
+            <option value="images/CLUFamilyN.png">Ciondolo Uomo</option>
+        </select>
+        <input type="submit" value="Inserisci">
+    </form>
+    <div id="pendant">
+        <div id="engravingArea" draggable="true"></div>
     </div>
     <script src="script.js"></script>
 </body>
