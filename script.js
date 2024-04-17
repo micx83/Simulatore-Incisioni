@@ -30,9 +30,7 @@ pendant.addEventListener('drop', function(event) {
     var id = event.dataTransfer.getData('text');
     var draggableElement = document.getElementById(id);
     if (draggableElement) {
-        var dropzone = event.target;
-        dropzone.appendChild(draggableElement);
-        draggableElement.style.left = event.clientX - dropzone.offsetLeft + 'px';
-        draggableElement.style.top = event.clientY - dropzone.offsetTop + 'px';
+        draggableElement.style.left = event.clientX - pendant.offsetLeft + 'px';
+        draggableElement.style.top = event.clientY - pendant.offsetTop + 'px';
     }
 });
