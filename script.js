@@ -8,15 +8,17 @@ document.getElementById('engravingForm').addEventListener('submit', function(eve
     var pendantDiv = document.getElementById('pendant');
     pendantDiv.style.backgroundImage = 'url(' + base + ')';
 
-    var engravingArea = document.getElementById('engravingArea');
-    engravingArea.style.fontFamily = font;
-    engravingArea.textContent = text;
-});
+    var textElement = document.createElement('div');
+    textElement.id = 'textElement';
+    textElement.style.position = 'absolute';
+    textElement.style.fontFamily = font;
+    textElement.textContent = text;
+    textElement.draggable = true;
+    pendantDiv.appendChild(textElement);
 
-var engravingArea = document.getElementById('engravingArea');
-
-engravingArea.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text/plain', engravingArea.id);
+    textElement.addEventListener('dragstart', function(event) {
+        event.dataTransfer.setData('text/plain', textElement.id);
+    });
 });
 
 var pendant = document.getElementById('pendant');
@@ -30,7 +32,8 @@ pendant.addEventListener('drop', function(event) {
     var id = event.dataTransfer.getData('text');
     var draggableElement = document.getElementById(id);
     if (draggableElement) {
-        draggableElement.style.left = event.clientX - pendant.offsetLeft + 'px';
-        draggableElement.style.top = event.clientY - pendant.offsetTop + 'px';
+        var rect = pendant.getBoundingClientRect();
+        draggableElement.style.left = event.clientX - rect.left - (draggableElement.offsetWidth / 2) + 'px';
+        draggableElement.style.top = event.clientY - rect.top - (draggableElement.offsetHeight / 2) + 'px';
     }
 });
