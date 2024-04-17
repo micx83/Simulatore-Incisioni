@@ -34,6 +34,7 @@ input[type="submit"] {
 
 #engravingArea {
     position: absolute;
+    cursor: move;
     top: 100px;
     left: 150px;
     width: 300px;
