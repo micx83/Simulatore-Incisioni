@@ -25,12 +25,8 @@ $(document).ready(function() {
         textOutputElement.appendTo(textContainer);
         textContainer.appendTo(pendantElement);
         textContainer.draggable();
-        textContainer.resizable();
-
-        textContainer.on('click', function(e) {
-            if ($(e.target).is('::before')) {
-                textContainer.remove();
+        textContainer.resizable({
+            resize: function() {
+                var scale = Math.sqrt(textContainer.width() * textContainer.height()) / 10;
+                textOutputElement.css('font-size', scale + 'px');
             }
-        });
-    });
-});
