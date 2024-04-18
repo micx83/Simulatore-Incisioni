@@ -4,7 +4,7 @@ $(document).ready(function() {
     var baseElement = $('#base');
     var pendantElement = $('#pendant');
     var placeholderElement = $('#placeholder');
-
+    
     baseElement.on('change', function() {
         if (baseElement.val()) {
             pendantElement.css('background-image', 'url(' + baseElement.val() + ')');
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         var textContainer = $('<div class="textContainer"></div>');
         var textOutputElement = $('<div class="textOutput"></div>');
-        var closeButton = $('<span class="closeButton"></span>');
+        var closeButton = $('<span class="closeButton">x</span>');
         textOutputElement.text(textElement.val());
         textOutputElement.css('font-family', fontElement.val());
         textOutputElement.appendTo(textContainer);

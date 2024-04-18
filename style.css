@@ -51,6 +51,8 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center; // Centra il testo orizzontalmente
+    line-height: 100px; // Centra il testo verticalmente
 }
 
 .textContainer:hover .closeButton {
