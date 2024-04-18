@@ -72,3 +72,10 @@ input[type="submit"] {
     cursor: pointer;
     transform: scale(1); 
 }
+
+.ui-resizable-se {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    opacity: 0 !important;
+}

@@ -23,6 +23,13 @@ textOutputElement.text(textElement.val());
 textOutputElement.css('font-family', fontElement.val());
 textOutputElement.css('width', textElement.width());
 textOutputElement.css('height', textElement.height());
+
+var closeButton = $('<span class="closeButton">x</span>');
+closeButton.on('click', function() {
+    textOutputElement.remove();
+});
+textOutputElement.append(closeButton);
+
 textOutputElement.appendTo(pendantElement);
 textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
 textOutputElement.resizable({
