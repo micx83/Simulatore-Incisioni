@@ -21,8 +21,10 @@ $(document).ready(function() {
         var textOutputElement = $('<div class="textOutput"></div>');
 textOutputElement.text(textElement.val());
 textOutputElement.css('font-family', fontElement.val());
+textOutputElement.css('width', textElement.width());
+textOutputElement.css('height', textElement.height());
 textOutputElement.appendTo(pendantElement);
-textOutputElement.draggable();
+textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
 textOutputElement.resizable({
     resize: function() {
         var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 10;
