@@ -1,4 +1,5 @@
 var selectedElement = null;
+var textElement = document.getElementById('text'); // Ora seleziona l'elemento con l'ID 'text'
 
 textElement.addEventListener('mousedown', function(e) {
     selectedElement = textElement;
