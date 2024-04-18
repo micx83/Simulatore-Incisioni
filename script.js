@@ -18,24 +18,22 @@ $(document).ready(function() {
     $('#engravingForm').on('submit', function(e) {
         e.preventDefault();
 
-        var textContainer = $('<div class="textContainer"></div>');
         var textOutputElement = $('<div class="textOutput"></div>');
         var closeButton = $('<span class="closeButton">x</span>');
         textOutputElement.text(textElement.val());
         textOutputElement.css('font-family', fontElement.val());
-        textOutputElement.appendTo(textContainer);
-        closeButton.appendTo(textContainer);
-        textContainer.appendTo(pendantElement);
-        textContainer.draggable();
-        textContainer.resizable({
+        closeButton.appendTo(textOutputElement);
+        textOutputElement.appendTo(pendantElement);
+        textOutputElement.draggable();
+        textOutputElement.resizable({
             resize: function() {
-                var scale = Math.sqrt(textContainer.width() * textContainer.height()) / 10;
+                var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 10;
                 textOutputElement.css('font-size', scale + 'px');
             }
         });
 
         closeButton.on('click', function() {
-            textContainer.remove();
+            textOutputElement.remove();
         });
     });
 });

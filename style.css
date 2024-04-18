@@ -42,17 +42,6 @@ input[type="submit"] {
     margin: 0;
 }
 
-.textContainer {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-}
-
 .textOutput {
     position: relative;
     margin: 0;
@@ -60,7 +49,7 @@ input[type="submit"] {
     line-height: 1;
 }
 
-.textContainer:hover .closeButton {
+.textOutput:hover .closeButton {
     display: block;
 }
 
@@ -68,15 +57,15 @@ input[type="submit"] {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -2px;
+    right: -2px;
     background-color: red;
     color: white;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     text-align: center;
-    line-height: 20px;
+    line-height: 16px; /* Modificato per centrare la "x" */
     cursor: pointer;
     transform: scale(1); 
 }
