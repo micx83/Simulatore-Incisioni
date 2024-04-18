@@ -66,12 +66,23 @@ input[type="submit"] {
     display: block;
 }
 
+.textContainer::after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    cursor: se-resize;
+}
+
 .closeButton {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: 3px; 
-    right: 3px; 
+    top: 2px;
+    right: 2px;
     background-color: red;
     color: white;
     width: 20px;
