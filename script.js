@@ -3,10 +3,7 @@ var isResizing = false;
 var isResizingText = false;
 var resizeDirection = '';
 
-var textElement = document.createElement('div');
-textElement.id = 'textElement';
-document.body.appendChild(textElement); // Aggiungi l'elemento al documento
-
+var textElement = document.getElementById('text');
 var baseElement = document.getElementById('base');
 var pendantElement = document.getElementById('pendant');
 
