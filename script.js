@@ -1,3 +1,5 @@
+var selectedElement = null;
+
 document.getElementById('engravingForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -24,6 +26,7 @@ document.getElementById('engravingForm').addEventListener('submit', function(eve
     var deleteElement = document.createElement('div');
     deleteElement.textContent = 'x';
     deleteElement.style.display = 'none';
+    deleteElement.style.fontFamily = 'Arial'; // Imposta il font-family su Arial
     textElement.appendChild(deleteElement);
 
     deleteElement.addEventListener('click', function() {
@@ -34,28 +37,19 @@ document.getElementById('engravingForm').addEventListener('submit', function(eve
         deleteElement.style.display = 'block';
     });
 
-    textElement.addEventListener('mouseout', function() {
-        deleteElement.style.display = 'none';
-    });
-
-    textElement.addEventListener('dragstart', function(event) {
-        event.dataTransfer.setData('text/plain', textElement.id);
+    textElement.addEventListener('mousedown', function() {
+        selectedElement = textElement;
     });
 });
 
-var pendant = document.getElementById('pendant');
-
-pendant.addEventListener('dragover', function(event) {
-    event.preventDefault();
-});
-
-pendant.addEventListener('drop', function(event) {
-    event.preventDefault();
-    var id = event.dataTransfer.getData('text');
-    var draggableElement = document.getElementById(id);
-    if (draggableElement) {
+document.addEventListener('mousemove', function(event) {
+    if (selectedElement) {
         var rect = pendant.getBoundingClientRect();
-        draggableElement.style.left = event.clientX - rect.left - (draggableElement.offsetWidth / 2) + 'px';
-        draggableElement.style.top = event.clientY - rect.top - (draggableElement.offsetHeight / 2) + 'px';
+        selectedElement.style.left = event.clientX - rect.left - (selectedElement.offsetWidth / 2) + 'px';
+        selectedElement.style.top = event.clientY - rect.top - (selectedElement.offsetHeight / 2) + 'px';
     }
+});
+
+document.addEventListener('mouseup', function() {
+    selectedElement = null;
 });

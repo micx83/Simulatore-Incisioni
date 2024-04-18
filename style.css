@@ -32,7 +32,7 @@ input[type="submit"] {
     background-position: center;
 }
 
-#engravingArea {
+#textElement {
     position: absolute;
     cursor: move;
     top: 100px;
@@ -48,7 +48,3 @@ input[type="submit"] {
     top: 0;
     right: 0;
     background-color: red;
-    color: white;
-    cursor: pointer;
-    display: none;
-}
