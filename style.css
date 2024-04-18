@@ -60,12 +60,16 @@ input[type="submit"] {
     line-height: 1;
 }
 
+.textContainer:hover .closeButton {
+    display: block;
+}
+
 .closeButton {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 1px;
+    right: 1px;
     background-color: red;
     color: white;
     width: 16px;
