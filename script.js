@@ -14,19 +14,19 @@ $(document).ready(function() {
             placeholderElement.show();
         }
     });
-
-    $('#engravingForm').on('submit', function(e) {
-        e.preventDefault();
-
-        var textOutputElement = $('<div class="textOutput"></div>');
-        textOutputElement.text(textElement.val());
-        textOutputElement.css('font-family', fontElement.val());
-        textOutputElement.appendTo(pendantElement);
-        textOutputElement.draggable();
-        textOutputElement.resizable();
-
-        textOutputElement.on('click', ':before', function() {
-            textOutputElement.remove();
+    
+        $('#engravingForm').on('submit', function(e) {
+            e.preventDefault();
+    
+            var textOutputElement = $('<div class="textOutput"></div>');
+            textOutputElement.text(textElement.val());
+            textOutputElement.css('font-family', fontElement.val());
+            textOutputElement.appendTo(pendantElement);
+            textOutputElement.draggable();
+            textOutputElement.resizable();
+    
+            textOutputElement.on('click', ':before', function() {
+                textOutputElement.remove();
+            });
         });
     });
-});
