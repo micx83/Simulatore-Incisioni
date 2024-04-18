@@ -43,14 +43,26 @@ input[type="submit"] {
 }
 
 .textContainer {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    width: auto;
+    height: auto;
 }
 
 .textOutput {
     position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.closeButton {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    /* ...resto del CSS... */
 }
 
 .textContainer:hover .closeButton {
@@ -66,8 +78,8 @@ input[type="submit"] {
     right: 2px;
     background-color: red;
     color: white;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     text-align: center;
     line-height: 20px;
