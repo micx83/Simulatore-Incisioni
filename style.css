@@ -96,3 +96,14 @@ input[type="submit"] {
     cursor: pointer;
     transform: scale(1); 
 }
+
+.ui-icon {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    display: none;
+}
+
+.textContainer:hover .ui-icon {
+    display: block;
+}
