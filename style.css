@@ -32,3 +32,9 @@ input[type="submit"] {
     background-position: center;
     margin-top: 30px;
 }
+
+#textOutput {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
