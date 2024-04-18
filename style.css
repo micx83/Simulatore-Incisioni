@@ -68,8 +68,8 @@ input[type="submit"] {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: -3px;
+    right: -3px;
     background-color: red;
     color: white;
     width: 16px;
