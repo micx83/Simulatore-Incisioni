@@ -1,5 +1,11 @@
 var selectedElement = null;
-var textElement = document.getElementById('text'); // Ora seleziona l'elemento con l'ID 'text'
+var isResizing = false;
+var isResizingText = false;
+var resizeDirection = '';
+
+var textElement = document.createElement('div');
+textElement.id = 'textElement';
+document.body.appendChild(textElement); // Aggiungi l'elemento al documento
 
 var baseElement = document.getElementById('base');
 var pendantElement = document.getElementById('pendant');

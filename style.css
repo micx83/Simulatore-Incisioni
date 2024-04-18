@@ -24,9 +24,6 @@ input[type="submit"] {
     padding: 0.5em 1em;
 }
 
-var textElement = document.createElement('div');
-textElement.id = 'textElement';
-
 #pendant {
     position: relative;
     width: 500px;
@@ -54,9 +51,9 @@ textElement.id = 'textElement';
     color: white;
     cursor: pointer;
     display: none;
-    margin: 5px;  // Aggiunto margine
+    margin: 5px;
 }
 
 #textElement:hover div {
-    display: block;  // Mostra l'elemento di cancellazione quando il mouse passa sopra l'elemento di testo
+    display: block;
 }
