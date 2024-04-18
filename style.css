@@ -57,12 +57,13 @@ input[type="submit"] {
 }
 
 .textContainer {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 17px;
-    line-height: 17px;
+    height: 16px;
+    line-height: 16px;
+    width: auto;
 }
 
 .textContainer:hover .closeButton {
