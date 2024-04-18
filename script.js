@@ -3,7 +3,7 @@ var isResizing = false;
 var isResizingText = false;
 var resizeDirection = '';
 
-var textElement = document.getElementById('text');
+var textElement = document.getElementById('textElement'); // Cambiato da 'text' a 'textElement'
 var baseElement = document.getElementById('base');
 var pendantElement = document.getElementById('pendant');
 
