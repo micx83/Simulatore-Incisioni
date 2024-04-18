@@ -43,32 +43,20 @@ input[type="submit"] {
 }
 
 .textContainer {
-    display: inline-block;
-}
-
-.textContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    height: 16px;
-    line-height: 16px;
-    width: auto;
+    position: relative;
+}
+
+.textOutput {
+    position: relative;
 }
 
 .textContainer:hover .closeButton {
     display: block;
 }
 
-.textContainer::after {
-    content: "";
-    position: absolute;
-    right: 3px;
-    bottom: 3px;
-    width: 10px;
-    height: 10px;
-    cursor: se-resize;
-}
 
 .closeButton {
     display: none;
@@ -78,22 +66,11 @@ input[type="submit"] {
     right: 2px;
     background-color: red;
     color: white;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     text-align: center;
     line-height: 20px;
     cursor: pointer;
     transform: scale(1); 
-}
-
-.ui-icon {
-    position: absolute;
-    right: 2px;
-    bottom: 2px;
-    display: none;
-}
-
-.textContainer:hover .ui-icon {
-    display: block;
 }
