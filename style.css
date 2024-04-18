@@ -32,7 +32,7 @@ input[type="submit"] {
     background-position: center;
 }
 
-#text {
+#textElement {
     position: absolute;
     cursor: move;
     top: 100px;
@@ -43,7 +43,7 @@ input[type="submit"] {
     line-height: 200px;
 }
 
-#text div {
+#textElement div {
     position: absolute;
     top: 0;
     right: 0;
@@ -54,6 +54,6 @@ input[type="submit"] {
     margin: 5px;
 }
 
-#text:hover div {
+#textElement:hover div {
     display: block;
 }
