@@ -20,9 +20,11 @@ $(document).ready(function() {
 
         var textContainer = $('<div class="textContainer"></div>');
         var textOutputElement = $('<div class="textOutput"></div>');
+        var closeButton = $('<span class="closeButton"></span>');
         textOutputElement.text(textElement.val());
         textOutputElement.css('font-family', fontElement.val());
         textOutputElement.appendTo(textContainer);
+        closeButton.appendTo(textContainer);
         textContainer.appendTo(pendantElement);
         textContainer.draggable();
         textContainer.resizable({
@@ -30,3 +32,10 @@ $(document).ready(function() {
                 var scale = Math.sqrt(textContainer.width() * textContainer.height()) / 10;
                 textOutputElement.css('font-size', scale + 'px');
             }
+        });
+
+        closeButton.on('click', function() {
+            textContainer.remove();
+        });
+    });
+});

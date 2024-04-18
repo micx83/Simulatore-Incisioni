@@ -53,8 +53,12 @@ input[type="submit"] {
     align-items: center;
 }
 
-.textOutput:hover:before {
-    content: 'x';
+.textContainer:hover .closeButton {
+    display: block;
+}
+
+.closeButton {
+    display: none;
     font-family: Arial;
     position: absolute;
     top: -10px;
