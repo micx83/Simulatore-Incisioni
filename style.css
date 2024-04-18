@@ -39,3 +39,13 @@ input[type="submit"] {
     text-align: center;
     line-height: 200px;
 }
+
+#textElement div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
