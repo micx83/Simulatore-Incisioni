@@ -39,7 +39,7 @@ input[type="submit"] {
 }
 
 #placeholder {
-    display: none;
+    margin: 0;
 }
 
 .textContainer {
