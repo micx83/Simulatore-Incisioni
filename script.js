@@ -1,6 +1,17 @@
 var selectedElement = null;
 var textElement = document.getElementById('text'); // Ora seleziona l'elemento con l'ID 'text'
 
+var baseElement = document.getElementById('base');
+var pendantElement = document.getElementById('pendant');
+
+textElement.addEventListener('input', function() {
+    pendantElement.textContent = textElement.value;
+});
+
+baseElement.addEventListener('change', function() {
+    pendantElement.style.backgroundImage = 'url(' + baseElement.value + ')';
+});
+
 textElement.addEventListener('mousedown', function(e) {
     selectedElement = textElement;
     if (e.offsetX > textElement.offsetWidth - 10) {
