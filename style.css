@@ -48,3 +48,12 @@ input[type="submit"] {
     top: 0;
     right: 0;
     background-color: red;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 5px;  // Aggiunto margine
+}
+
+#textElement:hover div {
+    display: block;  // Mostra l'elemento di cancellazione quando il mouse passa sopra l'elemento di testo
+}
