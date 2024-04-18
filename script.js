@@ -3,24 +3,30 @@ $(document).ready(function() {
     var fontElement = $('#font');
     var baseElement = $('#base');
     var pendantElement = $('#pendant');
-    var textOutputElement = $('<div id="textOutput"></div>');
+    var placeholderElement = $('#placeholder');
 
-    textElement.on('input', function() {
+    baseElement.on('change', function() {
+        if (baseElement.val()) {
+            pendantElement.css('background-image', 'url(' + baseElement.val() + ')');
+            placeholderElement.hide();
+        } else {
+            pendantElement.css('background-image', '');
+            placeholderElement.show();
+        }
+    });
+
+    $('#engravingForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var textOutputElement = $('<div class="textOutput"></div>');
         textOutputElement.text(textElement.val());
         textOutputElement.css('font-family', fontElement.val());
         textOutputElement.appendTo(pendantElement);
-    });
+        textOutputElement.draggable();
+        textOutputElement.resizable();
 
-    baseElement.on('change', function() {
-        pendantElement.css('background-image', 'url(' + baseElement.val() + ')');
-    });
-
-    // Aggiungi qui il codice per spostare, ridimensionare ed eliminare il testo
-    textOutputElement.draggable();
-    textOutputElement.resizable();
-
-    // Elimina il testo quando si fa clic su di esso
-    textOutputElement.on('click', function() {
-        $(this).remove();
+        textOutputElement.on('click', ':before', function() {
+            textOutputElement.remove();
+        });
     });
 });
