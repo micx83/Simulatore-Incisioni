@@ -15,18 +15,22 @@ $(document).ready(function() {
         }
     });
     
-        $('#engravingForm').on('submit', function(e) {
-            e.preventDefault();
-    
-            var textOutputElement = $('<div class="textOutput"></div>');
-            textOutputElement.text(textElement.val());
-            textOutputElement.css('font-family', fontElement.val());
-            textOutputElement.appendTo(pendantElement);
-            textOutputElement.draggable();
-            textOutputElement.resizable();
-    
-            textOutputElement.on('click', ':before', function() {
-                textOutputElement.remove();
-            });
+    $('#engravingForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var textContainer = $('<div class="textContainer"></div>');
+        var textOutputElement = $('<div class="textOutput"></div>');
+        textOutputElement.text(textElement.val());
+        textOutputElement.css('font-family', fontElement.val());
+        textOutputElement.appendTo(textContainer);
+        textContainer.appendTo(pendantElement);
+        textContainer.draggable();
+        textContainer.resizable();
+
+        textContainer.on('click', function(e) {
+            if ($(e.target).is('::before')) {
+                textContainer.remove();
+            }
         });
     });
+});
