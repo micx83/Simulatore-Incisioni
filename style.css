@@ -39,11 +39,14 @@ input[type="submit"] {
 }
 
 .textOutput {
+    position: relative;
     display: flex;
     cursor: move;
+    height: 20px;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    align-self: start;
+    justify-self: start;
     margin: 0;
     padding: 0;
     line-height: 1;
