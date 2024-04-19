@@ -42,7 +42,7 @@ input[type="submit"] {
     margin: 0;
 }
 
-.textOutput {
+.textOutput, .textOutput.ui {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,10 @@ input[type="submit"] {
     display: block;
 }
 
+.textOutput:hover .ui-resizable-se {
+    display: block;
+}
+
 .closeButton {
     display: none;
     font-family: Arial;
@@ -64,8 +68,8 @@ input[type="submit"] {
     right: 2px;
     background-color: red;
     color: white;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     text-align: center;
     line-height: 16px; /* Modificato per centrare la "x" */
@@ -74,8 +78,9 @@ input[type="submit"] {
 }
 
 .ui-resizable-se {
+    display:none;
     position: absolute !important;
-    right: 1px !important;
-    bottom: 1px !important;
-    opacity: 0 !important;
+    right: 3px !important;
+    bottom: 3px !important;
+    opacity: 50 !important;
 }
