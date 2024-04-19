@@ -38,10 +38,6 @@ input[type="submit"] {
     align-items: center;
 }
 
-#placeholder {
-    margin: 0;
-}
-
 .textOutput {
     display: flex;
     cursor: move;
@@ -54,10 +50,10 @@ input[type="submit"] {
     font-size: 16px;
 }
 
-.ui-icon.ui {
+.ui-icon {
     display: none;
 }
-.textOutput:hover .ui-icon.ui {
+.textOutput:hover .ui-icon {
     display: block;
     position: absolute;
     bottom: 3px;

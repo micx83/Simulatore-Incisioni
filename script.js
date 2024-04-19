@@ -33,6 +33,7 @@ $(document).ready(function() {
         textOutputElement.appendTo(pendantElement);
         textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
         textOutputElement.resizable({
+            handles: 'se',
             resize: function() {
                 var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 2;
                 textOutputElement.css('font-size', scale + 'px');
