@@ -33,17 +33,15 @@ textOutputElement.append(closeButton);
 textOutputElement.appendTo(pendantElement);
 textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
 textOutputElement.resizable({
+    handles: 'se',
     resize: function() {
         var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 5;
         textOutputElement.css('font-size', scale + 'px');
     }
 });
 
-var closeButton = $('<span class="closeButton">x</span>');
-
-closeButton.on('click', function() {
-    textOutputElement.remove();
-});
-textOutputElement.append(closeButton);
+        closeButton.on('click', function() {
+            textOutputElement.remove();
         });
+    });
 });
