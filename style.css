@@ -49,13 +49,8 @@ input[type="submit"] {
     padding: 0;
     line-height: 1;
     font-size: 16px;
-    pointer-events: none;;
-}
-
-.textOutput * {
     pointer-events: auto;
-};
-
+}
 
 .closeButton {
     display: none;
