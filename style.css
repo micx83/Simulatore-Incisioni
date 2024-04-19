@@ -69,14 +69,14 @@ input[type="submit"] {
     pointer-events: none;
 }
 
-.textOutput:hover .closeButton, .ui-icon, .ui-icon-gripsmall-diagonal-se {
+.textOutput:hover .closeButton {
         display: block;
     } 
    
-    .ui-icon.ui, .ui-icon-gripsmall-diagonal-se {
+    .ui-icon, .ui-icon-gripsmall-diagonal-se {
         display: none;
     }
     
-    .textOutput:hover .ui-icon {
+    .textOutput:hover .ui-icon, .textOutput:hover .ui-icon-gripsmall-diagonal-se {
         display: block;
     }
