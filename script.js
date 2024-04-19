@@ -21,8 +21,8 @@ $(document).ready(function() {
         var textOutputElement = $('<div class="textOutput"></div>');
 textOutputElement.text(textElement.val());
 textOutputElement.css('font-family', fontElement.val());
-textOutputElement.css('width', textElement.width());
-textOutputElement.css('height', textElement.height());
+textOutputElement.css('width', 'auto');
+textOutputElement.css('height', 'auto');
 
 var closeButton = $('<span class="closeButton">x</span>');
 closeButton.on('click', function() {
