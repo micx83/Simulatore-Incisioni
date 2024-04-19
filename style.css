@@ -51,31 +51,33 @@ input[type="submit"] {
     margin: 0;
     padding: 0;
     line-height: 1;
+    font-size: 16px;
 }
 
-.textOutput:hover .closeButton {
+.ui-icon.ui {
+    display: none;
+}
+.textOutput:hover .ui-icon.ui {
     display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
 }
 
-.textOutput:hover {
-    display: block;
+.closeButton {
+    display: none;
+    font-family: Arial;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: red;
+    color: white;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transform: scale(1); 
+    pointer-events: none;
 }
-
-    .closeButton {
-        display: none;
-        font-family: Arial;
-        position: absolute;
-        top: 2px;
-        right: 2px;
-        background-color: red;
-        color: white;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 14px;
-        cursor: pointer;
-        transform: scale(1); 
-        pointer-events: none;
-    }
-
