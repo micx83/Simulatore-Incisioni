@@ -39,9 +39,5 @@ $(document).ready(function() {
                 textOutputElement.css('font-size', scale + 'px');
             }
         });
-
-        closeButton.on('click', function() {
-            textOutputElement.remove();
-        });
     });
 });

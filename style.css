@@ -45,8 +45,6 @@ input[type="submit"] {
     height: 20px;
     justify-content: center;
     align-items: center;
-    align-self: start;
-    justify-self: start;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -70,7 +68,6 @@ input[type="submit"] {
     font-size: 14px;
     cursor: pointer;
     transform: scale(1); 
-    pointer-events: none;
 }
 
 .textOutput:hover .closeButton {
@@ -79,16 +76,16 @@ input[type="submit"] {
    
    /* Nascondi l'icona di ridimensionamento di default */
 .ui-icon, .ui-icon-gripsmall-diagonal-se {
-    display: none;
+    display: none !important;
 }
 
 /* Mostra la maniglia personalizzata solo quando si passa il mouse sopra textOutput */
 .textOutput:hover .ui-icon, .textOutput:hover .ui-icon-gripsmall-diagonal-se {
-    display: block;
+    display: block !important;
 }
 
 .resize-handle {
-    display: none;
+    display: none !important;
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -98,5 +95,5 @@ input[type="submit"] {
 }
 
 .textOutput:hover .resize-handle {
-    display: block;
+    display: block !important;
 }
