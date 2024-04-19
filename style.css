@@ -38,6 +38,46 @@ input[type="submit"] {
     align-items: center;
 }
 
+@font-face {
+    font-family: 'Savoye';
+    src: url('fonts/Savoye.ttf');
+}
+
+@font-face {
+    font-family: 'LovelyDay';
+    src: url('fonts/LovelyDay.ttf');
+}
+
+@font-face {
+    font-family: 'American';
+    src: url('fonts/American.ttf');
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+}
+
+#pendant {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid gray;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .textOutput {
     position: relative;
     display: flex;
