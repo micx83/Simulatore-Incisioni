@@ -42,7 +42,7 @@ input[type="submit"] {
     margin: 0;
 }
 
-.textOutput, .textOutput.ui {
+.textOutput {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,23 +56,25 @@ input[type="submit"] {
     display: block;
 }
 
-.textOutput:hover .ui-resizable-se {
+.textOutput:hover {
     display: block;
 }
 
-.closeButton {
-    display: none;
-    font-family: Arial;
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background-color: red;
-    color: white;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 16px; /* Modificato per centrare la "x" */
-    cursor: pointer;
-    transform: scale(1); 
-}
+    .closeButton {
+        display: none;
+        font-family: Arial;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-color: red;
+        color: white;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 14px; /* Modificato per centrare la "x" */
+        cursor: pointer;
+        transform: scale(1); 
+        pointer-events: none;
+    }
+

@@ -19,30 +19,28 @@ $(document).ready(function() {
         e.preventDefault();
 
         var textOutputElement = $('<div class="textOutput"></div>');
-textOutputElement.text(textElement.val());
-textOutputElement.css('font-family', fontElement.val());
-textOutputElement.css('width', 'auto');
-textOutputElement.css('height', 'auto');
+        textOutputElement.text(textElement.val());
+        textOutputElement.css('font-family', fontElement.val());
+        textOutputElement.css('width', 'auto');
+        textOutputElement.css('height', 'auto');
 
-var closeButton = $('<span class="closeButton">x</span>');
-closeButton.on('click', function() {
-    textOutputElement.remove();
-});
-textOutputElement.append(closeButton);
+        var dragHandle = $('<div class="drag-handle">Trascina qui</div>');
+        textOutputElement.prepend(dragHandle);
 
-textOutputElement.appendTo(pendantElement);
-textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
-textOutputElement.resizable({
-    handles: {
-        'se': textOutputElement,
-        'e': textOutputElement,
-        's': textOutputElement
-    },
-    resize: function() {
-        var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 2;
-        textOutputElement.css('font-size', scale + 'px');
-    }
-});
+        var closeButton = $('<span class="closeButton">x</span>');
+        closeButton.on('click', function() {
+            textOutputElement.remove();
+        });
+        textOutputElement.append(closeButton);
+
+        textOutputElement.appendTo(pendantElement);
+        textOutputElement.draggable({ containment: "parent", handle: ".drag-handle" }); // Contenimento all'interno dell'elemento genitore
+        textOutputElement.resizable({
+            resize: function() {
+                var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 2;
+                textOutputElement.css('font-size', scale + 'px');
+            }
+        });
 
         closeButton.on('click', function() {
             textOutputElement.remove();
