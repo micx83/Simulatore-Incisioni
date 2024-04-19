@@ -88,7 +88,8 @@ input[type="submit"] {
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: 16px;
+    font-size: 18px;
+    transform-origin: 0 0;
 }
 
 .closeButton {
@@ -111,10 +112,10 @@ input[type="submit"] {
 
 /* Nascondi l'icona di chiusura e l'icona di ridimensionamento di default */
 .textOutput .closeButton, .textOutput .ui-icon {
-    display: none;
+    display: none !important;
 }
 
 /* Mostra l'icona di chiusura e l'icona di ridimensionamento solo quando si passa il mouse sopra textOutput */
 .textOutput:hover .closeButton, .textOutput:hover .ui-icon {
-    display: block;
+    display: block !important;
 }
