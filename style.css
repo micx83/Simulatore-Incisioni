@@ -43,22 +43,13 @@ input[type="submit"] {
     cursor: move;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     margin: 0;
     padding: 0;
     line-height: 1;
     font-size: 16px;
 }
 
-.ui-icon {
-    display: none;
-}
-.textOutput:hover .ui-icon {
-    display: block;
-    position: absolute;
-    bottom: 3px;
-    right: 3px;
-}
 
 .closeButton {
     display: none;
@@ -77,3 +68,15 @@ input[type="submit"] {
     transform: scale(1); 
     pointer-events: none;
 }
+
+.textOutput:hover .closeButton, .ui-icon, .ui-icon-gripsmall-diagonal-se {
+        display: block;
+    } 
+   
+    .ui-icon.ui, .ui-icon-gripsmall-diagonal-se {
+        display: none;
+    }
+    
+    .textOutput:hover .ui-icon {
+        display: block;
+    }
