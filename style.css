@@ -73,7 +73,7 @@ input[type="submit"] {
         height: 14px;
         border-radius: 50%;
         text-align: center;
-        line-height: 14px; /* Modificato per centrare la "x" */
+        font-size: 14px;
         cursor: pointer;
         transform: scale(1); 
         pointer-events: none;
