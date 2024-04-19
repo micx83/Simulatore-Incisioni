@@ -24,9 +24,6 @@ $(document).ready(function() {
         textOutputElement.css('width', 'auto');
         textOutputElement.css('height', 'auto');
 
-        var dragHandle = $('<div class="drag-handle">Trascina qui</div>');
-        textOutputElement.prepend(dragHandle);
-
         var closeButton = $('<span class="closeButton">x</span>');
         closeButton.on('click', function() {
             textOutputElement.remove();
@@ -34,7 +31,7 @@ $(document).ready(function() {
         textOutputElement.append(closeButton);
 
         textOutputElement.appendTo(pendantElement);
-        textOutputElement.draggable({ containment: "parent", handle: ".drag-handle" }); // Contenimento all'interno dell'elemento genitore
+        textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
         textOutputElement.resizable({
             resize: function() {
                 var scale = Math.sqrt(textOutputElement.width() * textOutputElement.height()) / 2;
