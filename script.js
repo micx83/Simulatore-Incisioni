@@ -17,14 +17,16 @@ $(document).ready(function() {
     
     $('#engravingForm').on('submit', function(e) {
         e.preventDefault();
-
+    
         var textOutputElement = $('<div class="textOutput"></div>');
         textOutputElement.text(textElement.val());
         textOutputElement.css('font-family', fontElement.val());
         textOutputElement.css('font-size', '16px'); // Imposta la dimensione del font a 16px
-        textOutputElement.css('width', 'auto');
-        textOutputElement.css('height', 'auto');
-
+    
+        // Imposta la larghezza e l'altezza di textOutputElement per corrispondere a quelle di textElement
+        textOutputElement.css('width', textElement.width() + 'px');
+        textOutputElement.css('height', textElement.height() + 'px');
+        
         var closeButton = $('<span class="closeButton">x</span>');
         closeButton.on('click', function() {
             textOutputElement.remove();
