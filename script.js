@@ -39,8 +39,11 @@ textOutputElement.resizable({
     }
 });
 
-        closeButton.on('click', function() {
-            textOutputElement.remove();
+var closeButton = $('<span class="closeButton">x</span>');
+
+closeButton.on('click', function() {
+    textOutputElement.remove();
+});
+textOutputElement.append(closeButton);
         });
-    });
 });

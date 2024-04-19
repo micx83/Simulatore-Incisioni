@@ -60,8 +60,8 @@ input[type="submit"] {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: -2px;
-    right: -2px;
+    top: 2px;
+    right: 2px;
     background-color: red;
     color: white;
     width: 16px;
@@ -75,7 +75,7 @@ input[type="submit"] {
 
 .ui-resizable-se {
     position: absolute !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    right: 1px !important;
+    bottom: 1px !important;
     opacity: 0 !important;
 }
