@@ -55,8 +55,9 @@ input[type="submit"] {
     display: none;
     font-family: Arial;
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: red;
     color: white;
     width: 14px;
@@ -73,10 +74,26 @@ input[type="submit"] {
         display: block;
     } 
    
-    .ui-icon, .ui-icon-gripsmall-diagonal-se {
-        display: none;
-    }
-    
-    .textOutput:hover .ui-icon, .textOutput:hover .ui-icon-gripsmall-diagonal-se {
-        display: block;
-    }
+   /* Nascondi l'icona di ridimensionamento di default */
+.ui-icon, .ui-icon-gripsmall-diagonal-se {
+    display: none;
+}
+
+/* Mostra la maniglia personalizzata solo quando si passa il mouse sopra textOutput */
+.textOutput:hover .ui-icon, .textOutput:hover .ui-icon-gripsmall-diagonal-se {
+    display: block;
+}
+
+.resize-handle {
+    display: none;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    cursor: ns-resize;
+}
+
+.textOutput:hover .resize-handle {
+    display: block;
+}
