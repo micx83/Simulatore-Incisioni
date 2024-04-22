@@ -53,7 +53,11 @@ $(document).ready(function() {
                 var heightChange = ui.size.height - $(this).data('startHeight');
         
                 var newFontSize = $(this).data('startFontSize') + Math.min(widthChange, heightChange) / 2;
-        
+
+                // Limit the font size based on the width of the image
+                var maxWidth = parseInt(textElement.css('max-width'));
+                newFontSize = Math.min(newFontSize, maxWidth / $(this).text().length);
+
                 $(this).css({
                     'font-size': newFontSize + 'px',
                     height: 'auto',
