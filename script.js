@@ -4,78 +4,97 @@ $(document).ready(function() {
     var baseElement = $('#base');
     var pendantElement = $('#pendant');
     var placeholderElement = $('#placeholder');
-    
+    var zIndex = 0; 
+
     baseElement.on('change', function() {
         if (baseElement.val()) {
-            pendantElement.css('background-image', 'url(' + baseElement.val() + ')');
-            placeholderElement.hide();
+            var img = new MarvinImage();
+            img.load(baseElement.val(), function() {
+                // Convert the image to grayscale
+                Marvin.grayScale(img, img);
+
+                // Find the edges of the image
+                Marvin.prewitt(img, img);
+
+                // Find the width of the jewel image
+                var maxWidth = findMaxWidth(img);
+
+                // Set the maximum width of the text to the width of the jewel image
+                textElement.css('max-width', maxWidth + 'px');
+
+                pendantElement.css('background-image', 'url(' + baseElement.val() + ')');
+                placeholderElement.hide();
+            });
         } else {
             pendantElement.css('background-image', '');
             placeholderElement.show();
         }
     });
-    
+
     $('#engravingForm').on('submit', function(e) {
         e.preventDefault();
     
         var textOutputElement = $('<div class="textOutput"></div>');
-        textOutputElement.text(textElement.val());
-        textOutputElement.css('font-family', fontElement.val());
-        textOutputElement.css('font-size', '16px'); // Imposta la dimensione del font a 16px
+        textOutputElement.html(textElement.val().replace(/\n/g, '<br/>')); 
     
-        // Imposta la larghezza e l'altezza di textOutputElement per corrispondere a quelle di textElement
-        textOutputElement.css('width', textElement.width() + 'px');
-        textOutputElement.css('height', textElement.height() + 'px');
+        textOutputElement.css('font-family', fontElement.val());
+        textOutputElement.css('font-size','18'); 
+        textOutputElement.css('z-index', zIndex++); 
+        textOutputElement.css('position', 'absolute'); 
+    
+        textOutputElement.resizable({
+            start: function(event, ui) {
+                $(this).data('startFontSize', parseInt($(this).css('font-size')));
+                $(this).data('startWidth', ui.size.width);
+                $(this).data('startHeight', ui.size.height);
+            },
+            resize: function(event, ui) {
+                var widthChange = ui.size.width - $(this).data('startWidth');
+                var heightChange = ui.size.height - $(this).data('startHeight');
         
+                var newFontSize = $(this).data('startFontSize') + Math.min(widthChange, heightChange) / 2;
+        
+                $(this).css({
+                    'font-size': newFontSize + 'px',
+                    height: 'auto',
+                    width: 'auto'
+                });
+            }
+        });
+
+        fontElement.on('change', function() {
+            $('.textOutput').css('font-family', fontElement.val());
+        });
+
+        textOutputElement.draggable({
+            containment: "#pendant"
+        });
+
         var closeButton = $('<span class="closeButton">x</span>');
-        closeButton.on('click', function() {
+        closeButton.on('click', function(e) {
+            e.stopPropagation();
             textOutputElement.remove();
         });
+
+        closeButton.css({
+            position: 'absolute',
+            top: '-10px',  
+            left: '-10px'  
+        });
+
         textOutputElement.append(closeButton);
-
         textOutputElement.appendTo(pendantElement);
-        textOutputElement.draggable({ containment: "parent" }); // Contenimento all'interno dell'elemento genitore
-
-        // Crea un elemento div per il handle di ridimensionamento
-        var resizeHandle = $('<div></div>');
-        resizeHandle.css({
-            'width': '10px',
-            'height': '10px',
-            'background': 'red',
-            'position': 'absolute',
-            'right': '0',
-            'bottom': '0',
-            'cursor': 'se-resize'
-        });
-        textOutputElement.append(resizeHandle);
-
-        // Variabili per tenere traccia dello stato del ridimensionamento
-        var isResizing = false;
-        var lastDownX = 0;
-        var lastDownY = 0;
-
-        // Evento mousedown per iniziare il ridimensionamento
-        resizeHandle.on('mousedown', function(e) {
-            isResizing = true;
-            lastDownX = e.clientX;
-            lastDownY = e.clientY;
-        });
-
-        // Evento mousemove per effettuare il ridimensionamento
-        $(window).on('mousemove', function(e) {
-            if (!isResizing) 
-                return;
-            var offsetX = e.clientX - lastDownX;
-            var offsetY = e.clientY - lastDownY;
-            textOutputElement.css('width', (offsetX + textOutputElement.width()) + 'px');
-            textOutputElement.css('height', (offsetY + textOutputElement.height()) + 'px');
-            lastDownX = e.clientX;
-            lastDownY = e.clientY;
-        });
-
-        // Evento mouseup per terminare il ridimensionamento
-        $(window).on('mouseup', function(e) {
-            isResizing = false;
-        });
     });
 });
+
+function findMaxWidth(img) {
+    var maxWidth = 0;
+    for (var y = 0; y < img.getHeight(); y++) {
+        for (var x = 0; x < img.getWidth(); x++) {
+            if (img.getIntColor(x, y) != 0) {
+                maxWidth = Math.max(maxWidth, x);
+            }
+        }
+    }
+    return maxWidth;
+}
