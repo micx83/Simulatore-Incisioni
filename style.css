@@ -17,16 +17,41 @@ body {
     font-family: 'Arial';
 }
 
-input[type="text"], select {
-    width: 100%;
-    padding: 0.5em;
-    margin-top: 0.5em;
-    font-size: 16px;
+#engravingForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px; /* Aggiungi un margine inferiore per distanziare #engravingForm da #pendant */
 }
 
-input[type="submit"] {
-    margin-top: 1em;
-    padding: 0.5em 1em;
+#textElement {
+    /* Imposta la larghezza e l'altezza desiderate */
+    width: 300px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    height: 30px; /* Ad esempio, 30 pixel di altezza */
+    /* Imposta la dimensione del font */
+    font-size: 14px; /* Ad esempio, 14 pixel */
+}
+
+#base {
+    /* Imposta la larghezza e l'altezza desiderate */
+    width:210px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    height: 30px; /* Ad esempio, 30 pixel di altezza */
+    /* Imposta la dimensione del font */
+    font-size: 14px; /* Ad esempio, 14 pixel */
+}
+
+label {
+    /* Imposta la dimensione del font */
+    font-size: 14px; /* Ad esempio, 14 pixel */
+}
+
+input {
+    /* Imposta la larghezza e l'altezza desiderate */
+    width: 100px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    height: 30px; /* Ad esempio, 30 pixel di altezza */
+    /* Imposta la dimensione del font */
+    font-size: 14px; /* Ad esempio, 14 pixel */
 }
 
 #pendant {
@@ -36,11 +61,16 @@ input[type="submit"] {
     border: 1px solid gray;
     background-size: cover;
     background-position: center;
-    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
 }
+
 
 
 .textOutput {
@@ -109,14 +139,4 @@ input[type="submit"] {
 
 .ui-resizable-e {
     display: none !important;
-}
-
-.toolbar {
-    display: none; /* Nasconde la barra degli strumenti di default */
-    position: absolute; /* Permette di posizionare la barra degli strumenti a destra del #pendant */
-    right: -50px; /* Posiziona la barra degli strumenti a 50px a destra del #pendant */
-}
-
-.toolbarButton {
-    display: block; /* Mostra i pulsanti della barra degli strumenti uno sotto l'altro */
 }
