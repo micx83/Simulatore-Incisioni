@@ -12,22 +12,22 @@ $(document).ready(function() {
         {
             text: "Charm Cuore",
             value: "images/CHFamilyN.png",
-            imageSrc: "images/CHFamilyN_thumbnail.jpg"
+            imageSrc: "images/CHFamilyN.png"
         },
         {
             text: "Ciondolo Cuore",
             value: "images/CLCFamilyN.png",
-            imageSrc: "images/CLCFamilyN_thumbnail.jpg"
+            imageSrc: "images/CLCFamilyN.png"
         },
         {
             text: "Ciondolo Tondo",
             value: "images/CLTFamilyN.png",
-            imageSrc: "images/CLTFamilyN_thumbnail.jpg"
+            imageSrc: "images/CLTFamilyN.png"
         },
         {
             text: "Ciondolo Uomo",
             value: "images/CLUFamilyN.png",
-            imageSrc: "images/CLUFamilyN_thumbnail.jpg"
+            imageSrc: "images/CLUFamilyN.png"
         },
         
     ];
@@ -44,7 +44,8 @@ $(document).ready(function() {
                 pendantElement.css('background-image', '');
                 placeholderElement.show();
             }
-        }   
+        } 
+        
     });
 
 
@@ -92,14 +93,10 @@ $(document).ready(function() {
         closeButton.on('click', function(e) {
             e.stopPropagation();
             textOutputElement.remove();
- // Check if there are any textOutput elements left
- if ($('.textOutput').length === 0) {
-    // If not, remove the font selector copy
-    fontSelectorCopy.remove();
-    fontSelectorCopy = null;
-}
-
-
+            if ($('.textOutput').length === 0) {
+                fontSelectorCopy.remove();
+                fontSelectorCopy = null;
+            }
         });
 
         closeButton.css({
@@ -126,5 +123,4 @@ $(document).ready(function() {
             });
         }
     });
-});
-
+});      
