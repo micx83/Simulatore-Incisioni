@@ -17,44 +17,47 @@ body {
     font-family: 'Arial';
 }
 
+.container {
+    display: flex;
+}
+
 #engravingForm {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 20px; /* Aggiungi un margine inferiore per distanziare #engravingForm da #pendant */
+    padding: 50px;
 }
+
 
 #textElement {
-    /* Imposta la larghezza e l'altezza desiderate */
-    width: 300px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    margin-top: 78px;
+    width: 200px; /* Ad esempio, 80% della larghezza del contenitore padre */
     height: 30px; /* Ad esempio, 30 pixel di altezza */
     /* Imposta la dimensione del font */
     font-size: 14px; /* Ad esempio, 14 pixel */
+    text-align: center;
 }
 
-#base {
-    /* Imposta la larghezza e l'altezza desiderate */
-    width:210px; /* Ad esempio, 80% della larghezza del contenitore padre */
-    height: 30px; /* Ad esempio, 30 pixel di altezza */
-    /* Imposta la dimensione del font */
-    font-size: 14px; /* Ad esempio, 14 pixel */
-}
 
 label {
     /* Imposta la dimensione del font */
-    font-size: 14px; /* Ad esempio, 14 pixel */
+    font-size: 12px; /* Ad esempio, 14 pixel */
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 input {
     /* Imposta la larghezza e l'altezza desiderate */
-    width: 100px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    margin-top: 50px;
+    width: 80px; /* Ad esempio, 80% della larghezza del contenitore padre */
     height: 30px; /* Ad esempio, 30 pixel di altezza */
     /* Imposta la dimensione del font */
     font-size: 14px; /* Ad esempio, 14 pixel */
 }
 
 #pendant {
+    display: inline-block;
+    vertical-align: top;
     position: relative;
     width: 500px;
     height: 500px;
@@ -64,14 +67,10 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
-    width: 50%;
+    margin-top: 50px; /* Riduci il margine superiore per spostare l'elemento in alto */
+    margin-left: -30px; /* Aggiungi un margine negativo a sinistra per spostare l'elemento a sinistra */
 }
-
-
 
 .textOutput {
     display: flex;
@@ -142,6 +141,55 @@ input {
 }
 
 
+.imageContainer {
+    position: relative;
+}
+
+.imageContainer:hover .closeButton {
+    display: block;
+}
 
 
+#base {
+    /* Imposta la larghezza e l'altezza desiderate */
+    height: 20px; !important /* Ad esempio, 30 pixel di altezza */
+    /* Imposta la dimensione del font */
+    font-size: 14px; !importan/* Ad esempio, 14 pixel */
+    position: static;
+}
 
+.label-font-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.label-font-container label {
+    margin-right: 5px;
+}
+
+.dd-selected {
+    display: flex;
+    /* Centra gli elementi orizzontalmente e verticalmente */
+    justify-content: center;
+    flex-direction: row ;
+   
+    /* Imposta la larghezza e l'altezza desiderate */
+    width:230px; /* Ad esempio, 80% della larghezza del contenitore padre */
+    height: 50px; /* Ad esempio, 30 pixel di altezza */
+    /* Imposta la dimensione del font */
+    font-size: 14px; /* Ad esempio, 14 pixel */
+    /* Evita che il testo vada a capo */
+    white-space: nowrap;
+}
+
+.text-input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.text-input-container input[type="submit"] {
+    margin-left: 5px;
+    margin-top: 80px;
+}

@@ -5,16 +5,22 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
+    <div class="container">
     <form id="engravingForm">
         <div id="base"></div>
-        <input type="text" id="textElement" placeholder="Inserisci il testo da incidere">
-        <label for="font">Seleziona il font:</label>
-        <select id="font">
-            <option value="Savoye">Savoye</option>
-            <option value="LovelyDay">LovelyDay</option>
-            <option value="American">American</option>
-        </select>
-        <input type="submit" value="Inserisci">
+        <div class="text-input-container">
+            <input type="text" id="textElement" placeholder="Inserisci il testo da incidere">
+            <input type="submit" value="Inserisci">
+        </div>
+        <div class="label-font-container">
+            <label for="font">Seleziona il font:</label>
+            <select id="font">
+                <option value="Savoye">Savoye</option>
+                <option value="LovelyDay">LovelyDay</option>
+                <option value="American">American</option>
+            </select>
+        </div>
+        <select id="imageSelection"></select>
     </form>
     <div id="pendant">
         <div class="textContainer">
